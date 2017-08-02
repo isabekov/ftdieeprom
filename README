@@ -1,18 +1,17 @@
-Read and Write the eeprom of an ftdi device.
+Backup and flash EEPROM of an FTDI device.
 
 COMPILE
 --------
--Install libftdi on your system
--Run make
-
+- Install libftdi on your system
+- Run make
 
 USE
 ---
-Read eeprom
-./ftdieeprom R kk.hex
+Backup EEPROM to file
+./ftdieeprom -v 0x0403 -p 0x6014 -r -o EEPROM.bin
 
-Write eeprom
-./ftdieeprom W kk.hex
+Flash EEPROM from file
+./ftdieeprom -v 0x0403 -p 0x6014 -w -i EEPROM.bin
 
 
 OTHER
